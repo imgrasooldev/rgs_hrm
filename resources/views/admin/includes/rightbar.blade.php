@@ -59,14 +59,14 @@
       <ul>
          <li class="active">
             <div class="usrimg">
-               <img src="{{ asset(config('constants.constant.public_path') . 'assets/images/user2.') }}" alt="">
+               <img src="{{ asset(config('constants.constant.public_path') . 'assets/images/user2.png') }}" alt="">
             </div>
             <h5>Muhammad Hassan</h5>
             <span></span>
          </li>
          <li>
             <div class="usrimg">
-               <img src="{{ asset(config('constants.constant.public_path') . 'assets/images/user2.') }}" alt="">
+               <img src="{{ asset(config('constants.constant.public_path') . 'assets/images/user2.png') }}" alt="">
             </div>
             <h5>Arij Ali Khan</h5>
             <span></span>

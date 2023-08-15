@@ -30,8 +30,16 @@ Route::get('/', function () {
 // });
 
 Route::group(['middleware' => ['auth', 'role:Admin']], function () {
-    Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
-    Route::get('/insert-employee', [AdminController::class, 'insert'])->name('insert_employee');
+    Route::get('admin/dashboard', [AdminController::class, 'index'])->name('Admin.dashboard');
+    Route::get('/register-employee', [AdminController::class, 'register_form'])->name('register_employee');
+    Route::post('/employee-store', [AdminController::class, 'store'])->name('employee_store');
 });
+
+Route::group(['middleware' => ['auth', 'role:HR']], function () {
+    Route::get('hr/dashboard', [AdminController::class, 'index'])->name('HR.dashboard');
+    Route::get('/register-employee', [AdminController::class, 'register_form'])->name('register_employee');
+    Route::post('/employee-store', [AdminController::class, 'store'])->name('employee_store');
+});
+
 
 require __DIR__.'/auth.php';

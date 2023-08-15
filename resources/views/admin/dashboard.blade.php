@@ -1,4 +1,3 @@
-{{ dd(config('constants')) }}
 @extends('admin.master')
 @section('admin_content')
     <section class="dashWrapper">

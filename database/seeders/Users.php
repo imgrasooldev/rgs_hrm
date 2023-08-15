@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -16,11 +17,16 @@ class Users extends Seeder
      */
     public function run(): void
     {
+        //     $table->date('joining_date');
+        $mytime = Carbon::now();
+
         $user = User::create([
-            'name' => 'admin',
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('admin123'),
-        ]);
+                'name' => 'Super',
+                'last_name' => 'Admin',
+                'email' => 'admin@admin.com',
+                'password' => Hash::make('admin123'),
+                'joining_date' =>  $mytime->toDateTimeString(),
+            ]);
         $permissions = Permission::create([
             'name' => 'Admin'
         ]);
@@ -28,5 +34,13 @@ class Users extends Seeder
         $permissions = Permission::pluck('id','id')->all();
         $role->syncPermissions($permissions);
         $user->assignRole([$role->id]);
+
+        //Roles
+        $role = Role::create(['name' => 'HR']);
+        $role = Role::create(['name' => 'Production Head']);
+        $role = Role::create(['name' => 'Sales']);
+        $role = Role::create(['name' => 'Front-end']);
+        $role = Role::create(['name' => 'Back-end']);
+        $role = Role::create(['name' => 'Content Writing']);
     }
 }

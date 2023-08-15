@@ -11,8 +11,8 @@
    </div>
    <div class="menuWrap">
       <ul class="sidenav">
-         <li class="{{ Request::segment(2) == 'dashboard'?'active':'' }}"><a href="{{ Route('dashboard') }}"><span><i class="fal fa-draw-circle"></i></span> Dashboard</a></li>
-         <li class="{{ Request::segment(2) == 'add-employee'?'active':'' }}"><a href=""><span><i class="fal fa-user"></i></span> Profile</a></li>
+         <li class="{{ Request::segment(2) == Auth::user()->roles[0]->name.'.dashboard'?'active':'' }}"><a href="{{ Route(Auth::user()->roles[0]->name.'.dashboard') }}"><span><i class="fal fa-draw-circle"></i></span> Dashboard</a></li>
+         <li class="{{ Request::segment(2) == 'register-employee'?'active':'' }}"><a href="{{ Route('register_employee') }}"><span><i class="fal fa-user"></i></span> Profile</a></li>
          <li><a href="#"><span><i class="far fa-coins"></i></span> My Financials</a></li>
          <li><a href="team-members.php"><span><i class="fal fa-user-friends"></i></span> Team Members</a></li>
          <!-- <li><a href="#"><span><i class="far fa-store"></i></span> Kitchen Fund</a></li> -->

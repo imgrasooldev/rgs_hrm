@@ -4,22 +4,35 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Repository\EmployeeRepository;
+use App\Repository\RolesRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Contracts\Role;
 
 class AdminController extends Controller
 {
-    public function index(){
-        return view('admin.pages.employee.index');
+    private $employee = null;
+    private $roles = null;
+
+    public function __construct()
+    {
+        $this->employee = new EmployeeRepository();
+        $this->roles = new RolesRepository;
     }
 
-    public function insert(Request $request){
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->employee_id = $request->emp_id;
-        $user->role_id = $request->type;
-        $user->save();
+    public function index(){
+        return view('admin.dashboard');
     }
+
+    public function register_form(){
+        $roles = $this->roles->all();
+        return view('admin.pages.employee.index', compact('roles'));
+    }
+
+    public function store(Request $request){
+        $this->employee->store($request);
+    }
+
 }

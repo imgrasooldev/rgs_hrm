@@ -67,20 +67,20 @@
                                                 <input name="password" type="password" placeholder="Password">
                                             </div>
                                         </div> --}}
-                                        <div class="col-md-4">
+                                        {{-- <div class="col-md-4">
                                             <div class="profield">
                                                 <label>Personal Email Address</label>
                                                 <input required name="personal_email" type="email"
                                                     placeholder="Personal Email Address">
                                             </div>
-                                        </div>
-                                        <div class="col-md-4">
+                                        </div> --}}
+                                        {{-- <div class="col-md-4">
                                             <div class="profield">
                                                 <label>Date Of Birth</label>
                                                 <input required name="dob" type="date">
                                             </div>
-                                        </div>
-                                        <div class="col-md-4">
+                                        </div> --}}
+                                        {{-- <div class="col-md-4">
                                             <div class="profield">
                                                 <label>Gender</label>
                                                 <select required name="gender">
@@ -89,19 +89,19 @@
                                                     <option value="female">Female</option>
                                                 </select>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4">
+                                        </div> --}}
+                                        {{-- <div class="col-md-4">
                                             <div class="profield">
                                                 <label>Religion</label>
                                                 <input required name="religion" type="text" placeholder="Islam">
                                             </div>
-                                        </div>
-                                        <div class="col-md-4">
+                                        </div> --}}
+                                        {{-- <div class="col-md-4">
                                             <div class="profield">
                                                 <label>Personal Contact Number</label>
                                                 <input required name="contact_number" type="tel" placeholder="03XXXXXXXX">
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         {{-- <div class="col-md-4">
                                             <div class="profield">
                                                 <label>Place Of Birth (Country)</label>
